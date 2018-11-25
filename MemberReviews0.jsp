@@ -24,7 +24,7 @@
 			
 			con = com.eResorts.ConnectionPool.getConnection();
 			stmt =  con.createStatement();
-			String Query = "Select * from feedback order by `FId`";
+			String Query = "CALL GetReviews()";
 			rs = stmt.executeQuery(Query);
 			%>
 						<table align="center" width="60%">

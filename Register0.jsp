@@ -40,8 +40,20 @@
 			if(!(pattern.test(val)==true)){alert("Please enter valid email for "+T);return false;}
 		}
 		function validate()
-		{		var frm = document.forms(0);
-				MemberFee();
+		{		var frm = document.forms[0];
+				
+				T= frm.MemberType.value;
+				if(T=="Silver"){
+				Amount=5000;
+				frm.AmountDeposited.value =Amount;
+				}else if(T=="Gold"){
+				Amount=10000;
+				frm.AmountDeposited.value =Amount;
+				}else if(T=="Platinum"){
+				Amount=15000;
+				frm.AmountDeposited.value =Amount;
+				}
+
 			    if(ChkMandatoryField(frm.UserID,'User Id')==false) return false;
 				var divObj = document.getElementById("nameid");
 				var Msg = divObj.innerHTML;
@@ -69,7 +81,7 @@
 				if(ChkNumField(frm.cardnum,'Credit Card Number')==false) return false;
 		}
 function MemberFee(){
-			frm = document.forms(0);
+			frm = document.forms[0];
 			T= frm.MemberType.value;
 			//alert(T);
 			if(T=="Silver"){
@@ -179,7 +191,7 @@ function fnCallChkAvailability(U)
 		</TR>
 	    <TR class=row_even><TH align="left">AmountDeposited
 		<FONT COLOR="red">*</TH>
-		<TD class=row_odd>&nbsp;&nbsp;<Input type="text"  name='AmountDeposited' value='' readonly>
+		<TD class=row_odd>&nbsp;&nbsp;<Input type="text"  name='AmountDeposited' value='5000' readonly>
 		</TR>
 	        <TR>
 		<TH><INPUT TYPE="submit" value='Register'></TH>

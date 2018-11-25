@@ -53,10 +53,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		function validate()
 		{
 			var frm = document.forms[0];
-			//if(ChkMandatoryField(frm.UserID,'UserID')==false) return false;
-			//if(ChkAlphaField(frm.UserID,'UserID')==false) return false;
-			//if(ChkMandatoryField(frm.Password,'Password')==false) return false;
-			//if(ChkAlphaNumericField(frm.Password,'Password')==false) return false;
+			if(ChkMandatoryField(frm.UserID,'UserID')==false) return false;
+			if(ChkAlphaField(frm.UserID,'UserID')==false) return false;
+			if(ChkMandatoryField(frm.Password,'Password')==false) return false;
+			if(ChkAlphaNumericField(frm.Password,'Password')==false) return false;
 			
 		}
 	</script>
